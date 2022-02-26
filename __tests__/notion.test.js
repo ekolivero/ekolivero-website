@@ -1,5 +1,5 @@
 import { server } from '../mocks/server'
-import { getServerSideProps } from './notion'
+import { getServerSideProps } from '../pages/notion'
 
 beforeAll(() => server.listen())
 afterEach(() => server.resetHandlers())
