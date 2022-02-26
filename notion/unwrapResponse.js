@@ -4,6 +4,8 @@ let res = {
 	errorMessage: '',
 }
 
+//TODO: Improve unwrap and parse for notion requests
+
 function parseResponse(response) {
 	const { results } = response
 
