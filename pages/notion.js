@@ -3,8 +3,9 @@ import { getBookmarks } from '../notion'
 import unwrapResponse from '../notion/unwrapResponse'
 
 const Notion = ({ result, error }) => {
-	console.log(result, error)
-	return <h1> Hello </h1>
+	console.log(result)
+	console.log(error)
+	return <h1> Hello from vercel </h1>
 }
 
 export const getServerSideProps = () => {
