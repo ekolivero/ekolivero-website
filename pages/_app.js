@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import Head from 'next/head'
+import { Layout } from '../components'
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === 'true') {
 	require('../mocks')
@@ -7,12 +7,9 @@ if (process.env.NEXT_PUBLIC_API_MOCKING === 'true') {
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<>
-			<Head>
-				<title> Erik Olivero </title>
-			</Head>
+		<Layout>
 			<Component {...pageProps} />
-		</>
+		</Layout>
 	)
 }
 
