@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import Link from 'next/link'
 import { VscClose, VscMenu } from 'react-icons/vsc'
+import Footer from './Footer'
 
 const Header = ({ open, setOpen }) => {
 	const handleMenu = () => {
@@ -26,15 +27,15 @@ const Header = ({ open, setOpen }) => {
 		() => (
 			<ul
 				className={
-					'flex flex-1 flex-col justify-start lg:flex-row lg:justify-end'
+					'flex flex-1 flex-col justify-around py-10 items-center lg:flex-row lg:justify-end'
 				}
 			>
 				{menuItems.map(({ name, href }, key) => (
-					<li key={key} className={'py-1 lg:px-3'}>
+					<li key={key} className={'lg:px-3'}>
 						<Link href={href}>
 							<a
 								onClick={open && handleMenu}
-								className={'text-2xl font-semibold lg:text-lg lg:font-normal'}
+								className={'text-4xl font-semibold lg:text-lg lg:font-normal'}
 							>
 								{name}
 							</a>
@@ -50,7 +51,9 @@ const Header = ({ open, setOpen }) => {
 		<>
 			<div className='flex flex-1 flex-row h-24 items-center'>
 				<Link href='/'>
-					<a className='text-xl lg:text-2xl'>Erik Olivero</a>
+					<a className='text-xl lg:text-2xl' onClick={handleMenu}>
+						Erik Olivero
+					</a>
 				</Link>
 				<div className='hidden lg:flex flex-1'>{items}</div>
 				<div className='flex flex-1 justify-end lg:hidden'>
@@ -70,8 +73,11 @@ const Header = ({ open, setOpen }) => {
 				</div>
 			</div>
 			{open && (
-				<div className='flex flex-1 flex-column lg:hidden justify-start py-8'>
+				<div className='flex flex-1 h-[calc(100vh-96px)] flex-col lg:hidden'>
 					{items}
+					<div className='flex flex-1 items-end mx-auto w-64'>
+						<Footer />
+					</div>
 				</div>
 			)}
 		</>
