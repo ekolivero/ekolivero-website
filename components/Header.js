@@ -29,8 +29,8 @@ const Header = ({ open, setOpen }) => {
 					'flex flex-1 flex-col justify-start lg:flex-row lg:justify-end'
 				}
 			>
-				{menuItems.map(({ name, href }) => (
-					<li className={'py-1 lg:px-3'}>
+				{menuItems.map(({ name, href }, key) => (
+					<li key={key} className={'py-1 lg:px-3'}>
 						<Link href={href}>
 							<a
 								onClick={open && handleMenu}

@@ -5,7 +5,6 @@ import unwrapResponse from '../notion/unwrapResponse'
 import parseBookmarks from '../notion/parseBookmarks'
 
 const Bookmarks = ({ result }) => {
-	console.log(result)
 	return (
 		<>
 			<TitleSection
@@ -13,8 +12,8 @@ const Bookmarks = ({ result }) => {
 				title={'Interesting articles I want to read'}
 			/>
 			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10'>
-				{result.map((el) => (
-					<Card {...el} />
+				{result.map((el, key) => (
+					<Card {...el} key={key} />
 				))}
 			</div>
 		</>
